@@ -1,4 +1,4 @@
-package br.com.zupacademy.gleydson.casadocodigo.config;
+package br.com.zupacademy.gleydson.casadocodigo.exceptions;
 
 public class ValidationErrorDTO {
 	

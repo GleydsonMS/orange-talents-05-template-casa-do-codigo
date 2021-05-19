@@ -1,4 +1,4 @@
-package br.com.zupacademy.gleydson.casadocodigo.config;
+package br.com.zupacademy.gleydson.casadocodigo.exceptions;
 
 import java.util.ArrayList;
 import java.util.List;

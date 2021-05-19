@@ -1,10 +1,13 @@
 package br.com.zupacademy.gleydson.casadocodigo.categories;
 
+import br.com.zupacademy.gleydson.casadocodigo.validators.UniqueValue;
+
 import javax.validation.constraints.NotBlank;
 
 public class CategoryDTO {
 
     @NotBlank
+    @UniqueValue(domainClass = Category.class, fieldName = "name")
     private String name;
 
     @Deprecated

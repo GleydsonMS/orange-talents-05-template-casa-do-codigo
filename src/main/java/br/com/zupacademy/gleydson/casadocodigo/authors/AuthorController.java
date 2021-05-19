@@ -15,14 +15,6 @@ public class AuthorController {
 	@Autowired
 	private AuthorRepository authorRepository;
 
-	@Autowired
-	private ForbidEmailDuplicateAuthorValidator forbidEmailDuplicateAuthorValidator;
-
-	@InitBinder
-	public void init(WebDataBinder binder) {
-		binder.addValidators(forbidEmailDuplicateAuthorValidator);
-	}
-
 	@PostMapping
 	public ResponseEntity<?> create(@RequestBody @Valid AuthorDTO authorDTO) {
 		Author author = authorDTO.toModel();

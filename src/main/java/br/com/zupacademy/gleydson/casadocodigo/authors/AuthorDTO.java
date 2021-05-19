@@ -1,5 +1,7 @@
 package br.com.zupacademy.gleydson.casadocodigo.authors;
 
+import br.com.zupacademy.gleydson.casadocodigo.validators.UniqueValue;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -9,7 +11,9 @@ public class AuthorDTO {
 	@NotBlank
 	private String name;
 	
-	@Email @NotBlank
+	@Email
+	@NotBlank
+	@UniqueValue(domainClass = Author.class, fieldName = "email")
 	private String email;
 	
 	@NotBlank @Size(min = 1, max = 400)
