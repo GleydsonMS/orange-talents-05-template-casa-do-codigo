@@ -2,10 +2,7 @@ package br.com.zupacademy.gleydson.casadocodigo.authors;
 
 import java.time.Instant;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -20,8 +17,10 @@ public class Author {
 	
 	@NotBlank
 	private String name;
-	
-	@Email @NotBlank
+
+	@Column(unique = true)
+	@Email
+	@NotBlank
 	private String email;
 	
 	@NotBlank @Size(min = 1, max = 400)
@@ -29,6 +28,10 @@ public class Author {
 	
 	@NotNull
 	private Instant created_at;
+
+	@Deprecated
+	public Author() {
+	}
 
 	public Author(@NotBlank String name, 
 			@Email @NotBlank String email, 

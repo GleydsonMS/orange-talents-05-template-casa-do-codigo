@@ -23,6 +23,10 @@ public class AuthorDTO {
 		this.description = description;
 	}
 
+	public String getEmail() {
+		return this.email;
+	}
+
 	@Override
 	public String toString() {
 		return "AuthorDTO [name=" + name + ", email=" + email + ", description=" + description + "]";
