@@ -1,12 +1,11 @@
 package br.com.zupacademy.gleydson.casadocodigo.authors;
 
-import java.time.Instant;
-
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.Instant;
 
 @Entity
 public class Author {
