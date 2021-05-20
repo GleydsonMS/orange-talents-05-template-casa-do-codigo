@@ -95,4 +95,12 @@ public class Book {
                 ", category=" + category +
                 '}';
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
 }
