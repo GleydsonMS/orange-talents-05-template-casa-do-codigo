@@ -1,4 +1,4 @@
-package br.com.zupacademy.gleydson.casadocodigo.country;
+package br.com.zupacademy.gleydson.casadocodigo.countries;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
