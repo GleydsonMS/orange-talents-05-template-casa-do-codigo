@@ -41,6 +41,18 @@ public class Author {
 		this.created_at = Instant.now();
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
 	@Override
 	public String toString() {
 		return "Author [id=" + id + ", name=" + name + ", email=" + email + ", description=" + description
