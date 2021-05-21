@@ -1,14 +1,16 @@
 package br.com.zupacademy.gleydson.casadocodigo.states;
 
 import br.com.zupacademy.gleydson.casadocodigo.countries.Country;
-import br.com.zupacademy.gleydson.casadocodigo.validators.UniqueValueInSameCountry;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-@UniqueValueInSameCountry(domainClass = State.class, fieldName = "name")
 public class StateDTO {
+
+    @Autowired
+    private StateRepository stateRepository;
 
     @NotBlank
     private String name;
