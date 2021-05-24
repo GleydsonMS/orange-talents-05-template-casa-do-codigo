@@ -17,7 +17,7 @@ public class State {
     private String name;
 
     @NotNull
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Country country;
 
     @Deprecated
