@@ -9,6 +9,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class ForbidInformStateIfCountryToHaveStates implements Validator {
@@ -28,6 +29,12 @@ public class ForbidInformStateIfCountryToHaveStates implements Validator {
         }
 
         CustomerDTO customerDTO = (CustomerDTO) value;
+        Optional<State> st = stateRepository.findById(customerDTO.getStateId());
+
+        if(st.get().getCountry().getId() != customerDTO.getCountryId()) {
+            errors.rejectValue("countryId", null, "O país informado não possui este estado.");
+        }
+
         List<State> state = stateRepository.findByCountryId(customerDTO.getCountryId());
 
         if(!state.isEmpty() && customerDTO.getStateId() == null) {
